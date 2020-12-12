@@ -3,13 +3,13 @@ from __future__ import division
 from keras import backend as K
 from keras.layers import Conv2D
 import numpy as np
-import tensorflow as tf
+#import tensorflow as tf
 import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
 
 
 def icnr_weights(init = tf.keras.initializers.GlorotNormal(), scale=2, shape=[3,3,32,4], dtype = tf.float32):
-    sess = tf.compat.v1.Session() 
+    sess = tf.Session() 
     return sess.run(ICNR(init, scale=scale)(shape=shape, dtype=dtype))
 
 class ICNR:
