@@ -36,7 +36,7 @@ class ICNR:
         x = self.initializer(new_shape, dtype, partition_info)
         x = tf.transpose(x, perm=[2, 0, 1, 3])
         x = tf.image.resize(x, size=[shape[0] * self.scale, shape[1] * self.scale], method='nearest')
-        x = tf.space_to_depth(x, block_size=self.scale)
+        x = tf.compat.v1.space_to_depth(x, block_size=self.scale)
         x = tf.transpose(x, perm=[1, 2, 0, 3])
 
         return x
