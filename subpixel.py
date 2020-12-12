@@ -5,6 +5,8 @@ from keras.layers import Conv2D
 import numpy as np
 import tensorflow as tf
 
+tf.compat.v1.disable_eager_execution()
+
 
 
 #tf.glorot_normal_initializer()
