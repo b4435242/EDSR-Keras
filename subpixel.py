@@ -8,7 +8,8 @@ import tensorflow as tf
 
 #tf.glorot_normal_initializer()
 def icnr_weights(init = tf.keras.initializers.GlorotNormal(), scale=2, shape=[3,3,32,4], dtype = tf.float32):
-    sess = tf.Session()
+    #sess = tf.Session()
+    sess = tf.compat.v1.Session()
     return sess.run(ICNR(init, scale=scale)(shape=shape, dtype=dtype))
 
 class ICNR:
