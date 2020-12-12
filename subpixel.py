@@ -9,7 +9,7 @@ import tensorflow as tf
 
 #tf.glorot_normal_initializer()
 #tf.keras.initializers.GlorotNormal()
-def icnr_weights(init = tf.glorot_normal_initializer(), scale=2, shape=[3,3,32,4], dtype = tf.float32):
+def icnr_weights(init = tf.compat.v1.glorot_normal_initializer(), scale=2, shape=[3,3,32,4], dtype = tf.float32):
     sess = tf.compat.v1.Session() #tf.Session()
     return sess.run(ICNR(init, scale=scale)(shape=shape, dtype=dtype))
 
