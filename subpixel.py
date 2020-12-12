@@ -4,6 +4,8 @@ from keras import backend as K
 from keras.layers import Conv2D
 import numpy as np
 import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 
 
 #tf.glorot_normal_initializer()
