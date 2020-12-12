@@ -35,7 +35,7 @@ class ICNR:
         new_shape = shape[:3] + [shape[3] // (self.scale ** 2)]
         x = self.initializer(new_shape, dtype, partition_info)
         x = tf.transpose(x, perm=[2, 0, 1, 3])
-        x = tf.image.resize_nearest_neighbor(x, size=(shape[0] * self.scale, shape[1] * self.scale))
+        x = tf.compat.v1.image.resize_nearest_neighbor(x, size=(shape[0] * self.scale, shape[1] * self.scale))
         x = tf.space_to_depth(x, block_size=self.scale)
         x = tf.transpose(x, perm=[1, 2, 0, 3])
 
